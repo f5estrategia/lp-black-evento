@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Supabase</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff6b00;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e55a00;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .sucesso {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .erro {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        #logs {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .log-time {
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Teste de Conexão Supabase</h1>
+        <p>Este formulário testa o envio de dados para a tabela <strong>leads_topo</strong> no Supabase.</p>
+        
+        <form id="testForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required minlength="2" placeholder="João Silva">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="joao@example.com">
+            
+            <label for="telefone">WhatsApp:</label>
+            <input type="tel" id="telefone" name="telefone" required minlength="10" placeholder="11999999999">
+            
+            <button type="submit" id="submitBtn">Enviar Teste para Supabase</button>
+        </form>
+        
+        <div id="resultado"></div>
+        
+        <div id="logs">
+            <strong>📋 Logs de Execução:</strong>
+            <div id="logContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Configuração do Supabase (mesmas credenciais do .env)
+        const SUPABASE_URL = 'https://imotgvapfkebngteuccf.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltb3RndmFwZmtlYm5ndGV1Y2NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjExNTQ1NDIsImV4cCI6MjA3NjczMDU0Mn0.qO32aniAEbONn2wXs3H0VFual7IBZRiW2IiAks5zhIk';
+        
+        // Inicializar Supabase
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // Função para adicionar log
+        function addLog(message, type = 'info') {
+            const logContent = document.getElementById('logContent');
+            const time = new Date().toLocaleTimeString('pt-BR');
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            
+            const icon = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            
+            logEntry.innerHTML = `
+                <span class="log-time">[${time}]</span> ${icon} ${message}
+            `;
+            logContent.appendChild(logEntry);
+            logContent.scrollTop = logContent.scrollHeight;
+        }
+        
+        // Adicionar log inicial
+        addLog('Página carregada. Supabase inicializado.');
+        addLog(`URL: ${SUPABASE_URL}`);
+        
+        // Manipular envio do formulário
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const resultado = document.getElementById('resultado');
+            
+            // Desabilitar botão durante envio
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Coletar dados do formulário
+            const formData = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('telefone').value.replace(/\D/g, '')
+            };
+            
+            addLog('Iniciando envio do formulário...');
+            addLog('Dados: ' + JSON.stringify(formData));
+            
+            try {
+                // Tentar inserir no Supabase
+                addLog('Enviando para tabela "leads_topo"...');
+                
+                const { data, error } = await supabase
+                    .from('leads_topo')
+                    .insert([formData])
+                    .select();
+                
+                if (error) {
+                    // Erro do Supabase
+                    addLog('Erro Supabase: ' + JSON.stringify(error), 'error');
+                    
+                    resultado.style.display = 'block';
+                    resultado.className = 'erro';
+                    resultado.innerHTML = `
+                        <strong>❌ Erro ao enviar:</strong><br>
+                        <strong>Mensagem:</strong> ${error.message}<br>
+                        <strong>Código:</strong> ${error.code || 'N/A'}<br>
+                        <strong>Detalhes:</strong> ${error.details || 'N/A'}<br>
+                        <strong>Dica:</strong> ${error.hint || 'N/A'}
+                    `;
+                    
+                    console.error('Erro completo:', error);
+                } else {
+                    // Sucesso
+                    addLog('Dados inseridos com sucesso!', 'success');
+                    addLog('Resposta: ' + JSON.stringify(data), 'success');
+                    
+                    resultado.style.display = 'block';
+                    resultado.className = 'sucesso';
+                    resultado.innerHTML = `
+                        <strong>✅ Sucesso!</strong><br>
+                        Dados enviados para o Supabase.<br>
+                        ID do registro: ${data && data[0] ? data[0].id : 'N/A'}
+                    `;
+                    
+                    // Limpar formulário
+                    document.getElementById('testForm').reset();
+                }
+            } catch (err) {
+                // Erro JavaScript
+                addLog('Erro JavaScript: ' + err.message, 'error');
+                
+                resultado.style.display = 'block';
+                resultado.className = 'erro';
+                resultado.innerHTML = `
+                    <strong>❌ Erro inesperado:</strong><br>
+                    ${err.message}
+                `;
+                
+                console.error('Erro inesperado:', err);
+            } finally {
+                // Reabilitar botão
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Teste para Supabase';
+            }
+        });
+        
+        // Testar conexão ao carregar
+        async function testarConexao() {
+            try {
+                addLog('Testando conexão com Supabase...');
+                
+                // Tentar fazer um select simples
+                const { data, error } = await supabase
+                    .from('leads_topo')
+                    .select('id')
+                    .limit(1);
+                
+                if (error) {
+                    if (error.code === '42P01') {
+                        addLog('⚠️ Tabela "leads_topo" não existe!', 'error');
+                        addLog('Execute o script SQL para criar a tabela.', 'error');
+                    } else if (error.code === 'PGRST301') {
+                        addLog('⚠️ Problema com RLS (Row Level Security)', 'error');
+                        addLog('Verifique as políticas de segurança da tabela.', 'error');
+                    } else {
+                        addLog('Erro ao conectar: ' + error.message, 'error');
+                    }
+                } else {
+                    addLog('✅ Conexão com Supabase estabelecida!', 'success');
+                    addLog('Tabela "leads_topo" acessível.', 'success');
+                }
+            } catch (err) {
+                addLog('Erro ao testar conexão: ' + err.message, 'error');
+            }
+        }
+        
+        // Executar teste de conexão ao carregar
+        testarConexao();
+    </script>
+</body>
+</html>

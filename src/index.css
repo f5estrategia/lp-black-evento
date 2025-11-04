@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+:root {
+    /* F5 Brand Colors - HSL */
+    --f5-orange: 14 100% 60%;
+    --f5-orange-light: 14 100% 68%;
+    --f5-orange-dark: 14 87% 54%;
+    
+    /* Luxury Dark Theme - HSL */
+    --luxury-black: 0 0% 4%;
+    --luxury-dark: 0 0% 8%;
+    --luxury-dark-soft: 0 0% 10%;
+    --luxury-gray: 0 0% 16%;
+    --luxury-gray-light: 0 0% 23%;
+    
+    /* Text Colors - HSL */
+    --text-primary: 0 0% 100%;
+    --text-secondary: 0 0% 70%;
+    --text-muted: 0 0% 50%;
+    
+    /* Tailwind Compatibility */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 14 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 14 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 14 100% 60%;
+    --radius: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+  }
+  
+  /* Background texture - Inspired by sophisticated gradient backgrounds */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--f5-orange) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 60% at 10% 40%, hsl(var(--f5-orange) / 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 70% at 90% 60%, hsl(var(--f5-orange) / 0.1) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 50% at 30% 80%, hsl(var(--f5-orange) / 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 70% 20%, hsl(var(--f5-orange) / 0.06) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(var(--luxury-black)) 0%, hsl(0 0% 2%) 100%);
+    pointer-events: none;
+    z-index: 0;
+    animation: backgroundPulse 20s ease-in-out infinite;
+  }
+  
+  /* Glow overlay layer */
+  body::after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: 
+      radial-gradient(circle at 50% 50%, hsl(var(--f5-orange) / 0.03) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    animation: glowPulse 15s ease-in-out infinite alternate;
+  }
+  
+  @keyframes backgroundPulse {
+    0%, 100% { 
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% { 
+      opacity: 0.95;
+      filter: brightness(1.05);
+    }
+  }
+  
+  @keyframes glowPulse {
+    0% { 
+      transform: scale(1) rotate(0deg);
+      opacity: 0.6;
+    }
+    100% { 
+      transform: scale(1.1) rotate(10deg);
+      opacity: 0.8;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 15s ease-in-out infinite;
+  }
+  
+  .animate-gradient-shift {
+    animation: gradientShift 20s ease infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+  }
+}

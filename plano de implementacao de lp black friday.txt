@@ -1,0 +1,72 @@
+Crie APENAS a estrutura base + Hero:
+
+1.⁠ ⁠ESTRUTURA:
+•⁠  ⁠package.json (5 dependências: supabase, lucide-react, react, react-dom, zod)
+•⁠  ⁠vite.config.ts, tailwind.config.ts, tsconfig.*
+•⁠  ⁠index.html, src/main.tsx, src/App.tsx
+•⁠  ⁠src/index.css (com cores HSL: --f5-orange: 14 100% 60%)
+
+2.⁠ ⁠COMPONENTES UI:
+src/components/ui/button.tsx - Botão gradiente laranja
+src/components/ui/toast.tsx - Toast context simples
+
+3.⁠ ⁠HERO:
+src/components/sections/Hero.tsx com:
+•⁠  ⁠Headline: "Black Friday Odonto 2025: Como Faturar 3x Mais Sem Queimar Margem"
+•⁠  ⁠Info evento: 17/11, 19h, YouTube, Gratuito (4 cards com ícones)
+•⁠  ⁠3 métricas flutuantes (3.000+ clínicas, 900% ROI, 70% saúde)
+•⁠  ⁠Logos parceiros: Google, Meta, RD Station
+•⁠  ⁠Background: gradiente escuro + elementos flutuantes laranja
+
+ETAPA 2 - Pain Points + Solution 
+
+ 1. src/components/sections/PainPoints.tsx
+Seção "O que você vai aprender"
+4 cards com dores (leads, descontos, equipe, métricas)
+Ícones vermelhos (XCircle, TrendingDown, UsersRound, BarChart3)
+Border-left vermelho em cada card
+Card de transição no final
+2.⁠ ⁠src/components/sections/Solution.tsx
+Seção "Os 4 Pilares da Black Friday Odonto de Sucesso"
+4 pilares em grid 2x2 (Oferta, Público, Canais, Estrutura)
+Ícones: Gift, Users, Megaphone, Briefcase
+Card bônus dourado "BÔNUS EXCLUSIVO" (R$ 497 → GRATUITO)
+3.⁠ ⁠Atualize src/App.tsx Importe e adicione PainPoints e Solution:
+import PainPoints from "@/components/sections/PainPoints";
+import Solution from "@/components/sections/Solution";
+
+// Na estrutura:
+<Hero />
+<PainPoints />
+<Solution />
+<Suspense fallback={<div className="min-h-[400px]" />}>
+Copie exatamente do repositório. Confirme quando concluir.
+
+ETAPA 4 FINAL - ContactForm + Supabase (Projeto f5 Estratégia) Adicione do repositório 1. src/components/sections/ContactForm.tsx
+Formulário de captura de leads com validação Zod
+Campos: nome, email, WhatsApp, clínica (opcional), mensagem (opcional)
+Integração Supabase com captura de: UTM params, IP, device info, timestamp
+Toast de sucesso/erro
+Botão com loading state
+Validação de WhatsApp (formato brasileiro)
+2.⁠ ⁠src/lib/supabase.ts
+Cliente Supabase configurado
+Variáveis de ambiente: VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY
+3.⁠ ⁠src/components/ui/Toast.tsx
+Componente de notificação (sucesso/erro)
+Auto-dismiss após 5 segundos
+Ícones CheckCircle2 e XCircle
+4.⁠ ⁠Atualize src/App.tsx Adicione ContactForm dentro do Suspense (após FAQ):
+import ContactForm from "@/components/sections/ContactForm";
+
+// Na estrutura:
+<Suspense fallback={<div className="min-h-[400px]" />}>
+  <Cases />
+  <FAQ />
+  <ContactForm />
+</Suspense>
+5.⁠ ⁠Configure variáveis de ambiente Crie arquivo .env (você precisará fornecer suas credenciais Supabase):
+VITE_SUPABASE_URL=sua_url_aqui
+VITE_SUPABASE_ANON_KEY=sua_chave_aqui
+Copie exatamente do repositório. Confirme quando concluir.
+

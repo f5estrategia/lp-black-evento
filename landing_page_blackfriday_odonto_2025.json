@@ -1,0 +1,943 @@
+{
+  "metadata": {
+    "nome_projeto": "Landing Page Black Friday Odonto 2025",
+    "cliente": "f5 Estratégia - Aceleradora de Vendas",
+    "objetivo": "Captura de leads para live gratuita sobre Black Friday Odontológica",
+    "data_evento": "2025-11-17",
+    "horario_evento": "19:00",
+    "publico_alvo": "Dentistas e sócios de clínicas odontológicas que já investem em tráfego pago",
+    "taxa_conversao_esperada": "30-45%"
+  },
+
+  "branding": {
+    "nome_empresa": "f5 Estratégia",
+    "tagline": "Aceleradora de Vendas",
+    "posicionamento": "Agência especialista em clínicas de saúde",
+    "cores": {
+      "primaria": "#FE5B04",
+      "secundaria": "#C93F04",
+      "accent": "#595959",
+      "background_escuro": "#0A0A0A",
+      "background_claro": "#EFEFEF",
+      "texto_principal": "#FFFFFF",
+      "texto_secundario": "#EFEFEF",
+      "dourado": "#D4AF37"
+    },
+    "tipografia": {
+      "fonte_principal": "Inter, Poppins ou similar",
+      "h1": "56px, Bold (700)",
+      "h2": "42px, Bold (700)",
+      "h3": "28px, Semibold (600)",
+      "body_large": "18px, Regular (400)",
+      "body_regular": "16px, Regular (400)",
+      "cta": "18px, Bold (700), Uppercase"
+    }
+  },
+
+  "secao_hero": {
+    "ordem": 1,
+    "tipo": "hero_split",
+    "layout": "60_40_split",
+    "background": {
+      "tipo": "gradiente",
+      "cores": ["#0A0A0A", "rgba(201, 63, 4, 0.2)"],
+      "textura": "futurista_sutil"
+    },
+    "conteudo": {
+      "logo_selos": {
+        "logo_f5": true,
+        "parceiros": ["Google Partner", "Meta Partner", "RD Station Partner"],
+        "tamanho": "40px altura",
+        "cor": "branco com 90% opacity"
+      },
+      "headline": {
+        "texto": "Black Friday Odonto 2025: Como Faturar 3x Mais Sem Queimar Margem",
+        "tamanho": "56px",
+        "cor": "#FFFFFF",
+        "destaque": {
+          "texto": "3x",
+          "cor": "#FE5B04"
+        }
+      },
+      "subheadline": {
+        "texto": "Estratégias validadas em +3.000 clínicas para criar ofertas irresistíveis que lotam sua agenda mantendo a lucratividade",
+        "tamanho": "20px",
+        "cor": "#EFEFEF"
+      },
+      "info_evento": {
+        "data": "17 de Novembro (Segunda-feira)",
+        "horario": "19h",
+        "plataforma": "AO VIVO no YouTube",
+        "investimento": "100% Online e Gratuito",
+        "icones": {
+          "data": "calendar",
+          "horario": "clock",
+          "plataforma": "youtube"
+        }
+      },
+      "cta_principal": {
+        "texto": "GARANTIR MINHA VAGA GRATUITA",
+        "cor_fundo": "gradiente_laranja",
+        "tamanho": "64px altura",
+        "width": "100% (max 500px)",
+        "icone": "arrow-right animado"
+      },
+      "prova_social": {
+        "items": [
+          "Especialistas em Odontologia",
+          "3.000+ clínicas atendidas",
+          "Parceiros Oficiais: Google, Meta & RD Station",
+          "Homologados por: Oral Unic, Odonto Excellence, SorriFacil"
+        ],
+        "logos_homologacoes": [
+          "Oral Unic",
+          "Odonto Excellence",
+          "SorriFacil",
+          "Oral Brasil",
+          "Odontotop"
+        ]
+      }
+    },
+    "visual_direita": {
+      "tipo": "mockup_dashboard",
+      "estilo": "glassmorphism",
+      "elementos_flutuantes": [
+        "Card: 3.000+ clínicas",
+        "Card: ROI 900%",
+        "Ícones animados: calendário, gráfico, pacientes"
+      ]
+    }
+  },
+
+  "secao_dores": {
+    "ordem": 2,
+    "tipo": "identificacao_dores",
+    "background": "#0A0A0A",
+    "padding": "120px vertical",
+    "conteudo": {
+      "titulo_principal": {
+        "texto": "Sua clínica está perdendo faturamento na Black Friday?",
+        "tamanho": "42px",
+        "cor": "#FFFFFF",
+        "destaque": {
+          "texto": "Black Friday",
+          "cor": "#FE5B04"
+        }
+      },
+      "subtitulo": {
+        "texto": "Se você já investe em tráfego pago mas ainda enfrenta estes desafios:",
+        "tamanho": "18px",
+        "cor": "#EFEFEF"
+      },
+      "dores": [
+        {
+          "id": 1,
+          "icone": "x-circle",
+          "cor_icone": "#E74C3C",
+          "titulo": "Leads que não convertem em pacientes",
+          "descricao": "Recebe contatos pelo Google e Instagram, mas poucos realmente agendam ou comparecem?",
+          "border_color": "#E74C3C"
+        },
+        {
+          "id": 2,
+          "icone": "trending-down",
+          "cor_icone": "#E74C3C",
+          "titulo": "Descontos que destroem sua margem",
+          "descricao": "Participa da Black Friday mas no fim do mês descobre que lucrou pouco (ou até perdeu)?",
+          "border_color": "#E74C3C"
+        },
+        {
+          "id": 3,
+          "icone": "users-x",
+          "cor_icone": "#E74C3C",
+          "titulo": "Equipe despreparada para o alto volume",
+          "descricao": "Sua recepcionista não tem script de vendas e deixa dinheiro na mesa por falta de técnica?",
+          "border_color": "#E74C3C"
+        },
+        {
+          "id": 4,
+          "icone": "chart-no-axes-column",
+          "cor_icone": "#E74C3C",
+          "titulo": "Sem controle de métricas (CAC, ROI, taxa de conversão)",
+          "descricao": "Investe 'no escuro' sem saber exatamente qual campanha está trazendo resultado?",
+          "border_color": "#E74C3C"
+        }
+      ],
+      "transicao": {
+        "tipo": "gradiente_vertical",
+        "cores": ["rgba(231, 76, 60, 0.1)", "rgba(254, 91, 4, 0.1)"],
+        "texto_principal": "O problema não é a Black Friday. É a ESTRATÉGIA.",
+        "texto_secundario": "Enquanto você hesita, seu concorrente está lotando a agenda com pacientes de alto valor usando as mesmas técnicas que vamos revelar nesta live.",
+        "tamanho_principal": "36px",
+        "tamanho_secundario": "18px"
+      }
+    },
+    "design": {
+      "card_style": {
+        "background": "gradiente_sutil_preto_laranja",
+        "border_left": "4px solid vermelho",
+        "border_radius": "12px",
+        "padding": "24px",
+        "hover": "border aumenta + shadow"
+      }
+    }
+  },
+
+  "secao_solucao": {
+    "ordem": 3,
+    "tipo": "metodologia_conteudo",
+    "background": "preto_com_grid_pattern",
+    "padding": "120px vertical",
+    "conteudo": {
+      "titulo_principal": {
+        "texto": "Nesta Live Exclusiva, Você Vai Descobrir:",
+        "tamanho": "42px",
+        "cor": "gradiente_branco_laranja"
+      },
+      "subtitulo": {
+        "texto": "Os 4 Pilares de uma Black Friday Odontológica Lucrativa",
+        "tamanho": "28px",
+        "cor": "#FFFFFF",
+        "icone": "target"
+      },
+      "pilares": [
+        {
+          "numero": 1,
+          "nome": "OFERTA IRRESISTÍVEL",
+          "icone": "gift",
+          "cor_icone": "#FE5B04",
+          "topicos": [
+            "Como estruturar pacotes que vendem sem queimar margem",
+            "Precificação estratégica: desconto real vs. desconto percebido",
+            "Gatilhos mentais validados (escassez, urgência, prova social)"
+          ]
+        },
+        {
+          "numero": 2,
+          "nome": "PÚBLICO CERTO",
+          "icone": "users",
+          "cor_icone": "#FE5B04",
+          "topicos": [
+            "Base atual, leads antigos ou público frio: quem abordar primeiro?",
+            "Segmentação por procedimento e perfil de paciente",
+            "Técnica de reativação de pacientes inativos"
+          ]
+        },
+        {
+          "numero": 3,
+          "nome": "CANAIS DE DIVULGAÇÃO",
+          "icone": "megaphone",
+          "cor_icone": "#FE5B04",
+          "topicos": [
+            "Mix ideal: Meta Ads, Google Ads, WhatsApp, e-mail marketing",
+            "Orçamento sugerido por porte de clínica",
+            "Timing perfeito: quando começar as campanhas"
+          ]
+        },
+        {
+          "numero": 4,
+          "nome": "ESTRUTURA DE ATENDIMENTO",
+          "icone": "briefcase",
+          "cor_icone": "#FE5B04",
+          "topicos": [
+            "Como preparar sua equipe para converter em alto volume",
+            "Scripts de abordagem específicos para Black Friday",
+            "CRM configurado: zero vazamento de leads"
+          ]
+        }
+      ],
+      "blocos_adicionais": [
+        {
+          "titulo": "Checklist de Execução Prática",
+          "icone": "settings",
+          "descricao": "Cronograma completo do planejamento à análise pós-campanha",
+          "itens": [
+            "15 dias antes da Black Friday",
+            "7 dias antes (aquecimento)",
+            "Durante o evento (monitoramento real-time)",
+            "Pós-venda e follow-up estratégico"
+          ]
+        },
+        {
+          "titulo": "Os 5 Erros Fatais (e Como Evitá-los)",
+          "icone": "alert-triangle",
+          "descricao": "Aprenda com os erros mais comuns de clínicas que queimaram dinheiro na Black Friday",
+          "destaque": true
+        }
+      ],
+      "bonus": {
+        "background": "gradiente_preto_dourado",
+        "border": "2px dashed dourado",
+        "titulo": "BÔNUS EXCLUSIVOS PARA QUEM PARTICIPAR AO VIVO",
+        "icone": "gift",
+        "icone_size": "64px",
+        "icone_animacao": "pulse",
+        "itens": [
+          {
+            "nome": "Mini Treinamento CRC Completo",
+            "icone": "video",
+            "descricao": "Como Receber e Converter leads em pacientes pagantes - Metodologia validada em +3.000 clínicas",
+            "duracao": "15-20 minutos"
+          },
+          {
+            "nome": "E-book CRC para Download",
+            "icone": "book",
+            "descricao": "Material completo de apoio para implementação imediata"
+          }
+        ],
+        "valor": {
+          "original": "R$ 497,00",
+          "atual": "R$ 0,00",
+          "cor_original": "cinza com line-through",
+          "cor_atual": "dourado, 36px, bold"
+        }
+      }
+    },
+    "design": {
+      "pilares_grid": "2x2 desktop, stack mobile",
+      "card_pilar": {
+        "background": "gradiente_preto_laranja_5%",
+        "border": "2px solid laranja",
+        "border_radius": "12px",
+        "padding": "32px",
+        "hover": "lift_effect + border_glow"
+      }
+    }
+  },
+
+  "secao_credibilidade": {
+    "ordem": 4,
+    "tipo": "autoridade_cases",
+    "background": "preto_com_elementos_geometricos",
+    "padding": "120px vertical",
+    "conteudo": {
+      "titulo_principal": {
+        "texto": "Por Que +3.000 Clínicas Confiam na f5 Estratégia",
+        "tamanho": "42px",
+        "cor": "#FFFFFF",
+        "destaque_numero": "#FE5B04"
+      },
+      "numeros_autoridade": [
+        {
+          "id": 1,
+          "icone": "building-2",
+          "numero": "3.000+",
+          "label": "Clínicas Atendidas",
+          "sublabel": "Mais de 8 anos acelerando vendas no mercado de saúde"
+        },
+        {
+          "id": 2,
+          "icone": "tooth",
+          "numero": "50+",
+          "label": "Marcas Odontológicas",
+          "sublabel": "Referência nacional em marketing digital para odontologia"
+        },
+        {
+          "id": 3,
+          "icone": "trending-up",
+          "numero": "400% a 900%",
+          "label": "ROI Comprovado",
+          "sublabel": "Retorno comprovado e documentado"
+        },
+        {
+          "id": 4,
+          "icone": "dollar-sign",
+          "numero": "60%",
+          "label": "Redução no CAC",
+          "sublabel": "Custo de aquisição significativamente menor"
+        }
+      ],
+      "parceiros": {
+        "titulo": "Parceiros Oficiais",
+        "logos": ["Google Partner", "Meta Partner", "RD Station Partner"]
+      },
+      "homologacoes": {
+        "titulo": "Homologados por",
+        "logos": ["Oral Unic", "Odonto Excellence", "SorriFacil", "Oral Brasil", "Odontotop"]
+      },
+      "condutor_live": {
+        "nome": "Fernando Machado",
+        "cargo": "CEO da f5 Estratégia - Aceleradora de Vendas",
+        "foto": "fernando_machado.jpg",
+        "credenciais": [
+          "Especialista certificado RD Station",
+          "+20 anos em vendas e marketing digital",
+          "Responsável pela transformação de +3.000 clínicas",
+          "Referência em aceleração para o mercado de saúde"
+        ],
+        "foto_style": {
+          "shape": "circle",
+          "size": "180px",
+          "border": "4px solid gradiente_laranja",
+          "shadow": "glow_laranja"
+        }
+      },
+      "cases": [
+        {
+          "id": 1,
+          "nome": "Oral Unic Ibirama",
+          "subtitulo": "Inauguração Explosiva",
+          "localizacao": "Santa Catarina",
+          "tipo": "Franquia Odontológica",
+          "badge": "CASE DESTAQUE",
+          "desafio": "Clínica recém-inaugurada precisava lotar a agenda rapidamente e atingir faturamento relevante desde o primeiro mês.",
+          "estrategia": {
+            "descricao": "Campanhas de tráfego pago focadas em conversão + alcance regional",
+            "taticas": [
+              "Gatilhos de urgência: 'inauguração' e 'estamos chegando'",
+              "Chamadas regionais: 'Atenção Ibirama'",
+              "Imagens de pontos conhecidos da cidade",
+              "Reimpactação estratégica do público"
+            ]
+          },
+          "investimento": {
+            "valor": "R$ 5.386,79",
+            "periodo": "35 dias",
+            "canal": "Meta Ads"
+          },
+          "resultados": {
+            "periodo": "Primeiro mês",
+            "metricas": [
+              {
+                "icone": "chart-line",
+                "numero": "146",
+                "label": "Leads gerados",
+                "descricao": "Fluxo constante de potenciais pacientes"
+              },
+              {
+                "icone": "check-circle",
+                "numero": "52",
+                "label": "Vendas concretizadas",
+                "descricao": "Taxa de conversão de 35%",
+                "destaque": true
+              },
+              {
+                "icone": "dollar-sign",
+                "numero": "R$ 352.250",
+                "label": "Faturamento",
+                "destaque": true
+              },
+              {
+                "icone": "trending-up",
+                "numero": "64,65x",
+                "label": "ROAS",
+                "descricao": "Cada R$ 1 investido retornou R$ 64,65!",
+                "destaque": true
+              },
+              {
+                "icone": "briefcase",
+                "numero": "R$ 922.200",
+                "label": "Orçamento total",
+                "descricao": "Com R$ 700k em negociação"
+              }
+            ]
+          },
+          "depoimento": {
+            "texto": "A estratégia da f5 foi decisiva para consolidar nossa clínica no mercado desde o primeiro mês. Resultados acima de todas as expectativas.",
+            "autor": "Oral Unic Ibirama"
+          }
+        },
+        {
+          "id": 2,
+          "nome": "Oral Unic Vila Mariana",
+          "subtitulo": "Virada de Jogo",
+          "localizacao": "São Paulo - SP",
+          "tipo": "Franquia Odontológica",
+          "badge": "TOP 3 NACIONAL",
+          "desafio": "Unidade em situação de emergência precisava reverter resultados e aumentar faturamento rapidamente.",
+          "estrategia": {
+            "descricao": "Comunicação estratégica com foco em alta conversão",
+            "taticas": [
+              "Público semelhante (lookalike) de alta conversão",
+              "Conteúdos humanizados com vídeos autênticos",
+              "Comunicação estratégica com foco em confiança",
+              "CRM organizado para zero vazamento de leads"
+            ]
+          },
+          "resultados": {
+            "periodo": "Ano completo",
+            "metricas": [
+              {
+                "icone": "gem",
+                "numero": "19,81x",
+                "label": "ROI",
+                "descricao": "Retorno impressionante sobre investimento",
+                "destaque": true
+              },
+              {
+                "icone": "trophy",
+                "numero": "Top 3",
+                "label": "Ranking Nacional",
+                "descricao": "Entre todas agências Oral Unic em 2023",
+                "destaque": true
+              },
+              {
+                "icone": "star",
+                "numero": "667,8",
+                "label": "Pontos",
+                "descricao": "Na avaliação nacional da franquia"
+              },
+              {
+                "icone": "trending-up",
+                "numero": "Recorde",
+                "label": "Faturamento",
+                "descricao": "Faturamento recorde alcançado"
+              }
+            ]
+          },
+          "depoimento": {
+            "texto": "A f5 não apenas gerou leads, mas garantiu que esses contatos tivessem alto potencial de conversão. O planejamento mudou completamente o rumo do nosso negócio.",
+            "autor": "Oral Unic Vila Mariana"
+          }
+        },
+        {
+          "id": 3,
+          "nome": "Centro do Sorriso Arapongas",
+          "subtitulo": "Conversão Rápida",
+          "localizacao": "Paraná",
+          "tipo": "Clínica Odontológica Multidisciplinar",
+          "badge": "CONVERSÃO EXPRESSA",
+          "desafio": "Clínica precisava aumentar volume de pacientes e melhorar previsibilidade de vendas.",
+          "estrategia": {
+            "descricao": "Mix estratégico de canais com CRM organizado",
+            "taticas": [
+              "Mix de canais: Meta Ads + Google Ads",
+              "Palavras-chave específicas dos serviços",
+              "CRM organizado com suporte ativo da equipe f5",
+              "Treinamento da equipe comercial"
+            ]
+          },
+          "investimento": {
+            "meta_ads": "R$ 863",
+            "google_ads": "incluso",
+            "periodo": "20 dias iniciais"
+          },
+          "resultados": {
+            "periodo": "Primeiros 20 dias",
+            "metricas_iniciais": [
+              {
+                "icone": "zap",
+                "numero": "6",
+                "label": "Vendas",
+                "descricao": "Nos primeiros 20 dias"
+              },
+              {
+                "icone": "dollar-sign",
+                "numero": "R$ 600-1.500",
+                "label": "3 vendas",
+                "descricao": "Tickets médios"
+              },
+              {
+                "icone": "gem",
+                "numero": "2",
+                "label": "Próteses",
+                "descricao": "High ticket vendidas"
+              },
+              {
+                "icone": "users",
+                "numero": "48",
+                "label": "Leads Meta",
+                "descricao": "R$ 18,00 por lead"
+              },
+              {
+                "icone": "search",
+                "numero": "66",
+                "label": "Leads Google",
+                "descricao": "R$ 18,55 por lead"
+              },
+              {
+                "icone": "check-circle",
+                "numero": "9",
+                "label": "Vendas totais",
+                "descricao": "No primeiro mês"
+              }
+            ],
+            "resultados_anuais": {
+              "periodo": "Ano completo",
+              "metricas": [
+                {
+                  "icone": "trending-up",
+                  "numero": "R$ 3.070",
+                  "label": "Investimento"
+                },
+                {
+                  "icone": "dollar-sign",
+                  "numero": "R$ 101.327",
+                  "label": "Faturamento gerado",
+                  "destaque": true
+                },
+                {
+                  "icone": "rocket",
+                  "numero": "33x",
+                  "label": "ROAS",
+                  "descricao": "Cada real investido retornou 33 reais!",
+                  "destaque": true
+                }
+              ]
+            }
+          },
+          "depoimento": {
+            "texto": "O grande diferencial foi o engajamento da f5 desde o primeiro contato. O suporte no CRM e as ferramentas empregadas nos deram segurança para converter cada lead.",
+            "autor": "Centro do Sorriso Arapongas"
+          }
+        }
+      ],
+      "pontos_comuns": {
+        "titulo": "O QUE ESSES CASES TÊM EM COMUM?",
+        "icone": "lightbulb",
+        "items": [
+          "Estratégia personalizada para cada realidade",
+          "Uso inteligente de tráfego pago (Google + Meta)",
+          "CRM organizado para zero vazamento",
+          "Equipe treinada para converter leads",
+          "Acompanhamento próximo da f5",
+          "Resultados mensuráveis e comprovados"
+        ],
+        "cta_texto": "E essa mesma metodologia será revelada na live de Black Friday!"
+      },
+      "reconhecimento": {
+        "titulo": "RECONHECIMENTO DE MERCADO",
+        "badges": [
+          {
+            "icone": "award",
+            "emoji": "🥉",
+            "titulo": "Top 3 Agência Oral Unic 2023",
+            "descricao": "Entre todas as agências do Brasil que atendem a maior rede odontológica do país"
+          },
+          {
+            "icone": "bar-chart",
+            "emoji": "📊",
+            "titulo": "667,8 Pontos",
+            "descricao": "Na avaliação nacional de performance"
+          },
+          {
+            "icone": "target",
+            "emoji": "🎯",
+            "titulo": "35% de Taxa de Conversão Média",
+            "descricao": "Muito acima da média de mercado (10-15%)"
+          },
+          {
+            "icone": "trending-up",
+            "emoji": "💰",
+            "titulo": "ROAS Médio: 19x a 65x",
+            "descricao": "Retorno consistente e sustentável"
+          }
+        ]
+      }
+    },
+    "design": {
+      "numeros_grid": "2x2",
+      "card_numero": {
+        "size": "280px x 280px",
+        "background": "glassmorphism",
+        "border": "1px solid laranja 30%",
+        "hover": "rotate_sutil + shadow_increase",
+        "animacao": "count_up_on_viewport"
+      },
+      "cases_layout": "3 cards horizontal ou stack mobile",
+      "card_case": {
+        "background": "preto com border gradiente",
+        "border": "2px solid gradiente laranja dourado",
+        "padding": "32px",
+        "hover": "lift_effect"
+      }
+    }
+  },
+
+  "secao_conversao_final": {
+    "ordem": 5,
+    "tipo": "call_to_action",
+    "background": "gradiente_radial_laranja_preto",
+    "padding": "120px vertical",
+    "elementos_geometricos": "circulos_linhas_animados",
+    "conteudo": {
+      "titulo_principal": {
+        "texto": "Garanta Sua Vaga Gratuita na Live",
+        "tamanho": "48px",
+        "cor": "#FFFFFF",
+        "destaque": {
+          "texto": "GRATUITA",
+          "cor": "#D4AF37"
+        },
+        "animacao": "pulse_sutil"
+      },
+      "beneficios": {
+        "titulo": "O QUE VOCÊ LEVA",
+        "items": [
+          "Estratégia completa para Black Friday Odonto 2025",
+          "Os 4 Pilares de uma campanha lucrativa",
+          "Checklist operacional completo",
+          "Precificação estratégica sem queimar margem",
+          "Scripts de vendas para sua equipe",
+          "Mini Treinamento CRC (valor R$ 397)",
+          "E-book CRC para download (valor R$ 100)"
+        ],
+        "icone_check": "check_circle_laranja_filled",
+        "animacao": "stagger_entrada"
+      },
+      "info_evento": {
+        "titulo": "INFORMAÇÕES",
+        "data": "17 de Novembro de 2025 (Segunda-feira)",
+        "horario": "19h00 (horário de Brasília)",
+        "plataforma": "YouTube (Ao Vivo)",
+        "investimento": "100% Gratuito",
+        "card_style": "glassmorphism_forte",
+        "border": "2px solid laranja"
+      },
+      "vagas_limitadas": {
+        "titulo": "VAGAS LIMITADAS",
+        "icone": "alert_triangle",
+        "items": [
+          "Link exclusivo de transmissão via e-mail",
+          "Lembrete 24h antes do evento",
+          "Acesso prioritário aos materiais bônus",
+          "Possibilidade de fazer perguntas ao vivo"
+        ],
+        "background": "vermelho_escuro_20%",
+        "border": "2px solid vermelho"
+      },
+      "cta_gigante": {
+        "texto": "GARANTIR MINHA VAGA GRATUITA AGORA",
+        "width": "100% (max 600px)",
+        "height": "80px",
+        "background": "gradiente_laranja + shine_animation",
+        "font_size": "20px",
+        "font_weight": "bold",
+        "text_transform": "uppercase",
+        "icone": "rocket_animado_24px",
+        "hover": "scale_1.05 + shadow_massive + brightness_120%",
+        "animacao_continua": "pulse_sutil",
+        "microinteracao": "ripple_effect_click"
+      },
+      "selo_seguranca": {
+        "icone": "lock",
+        "texto": "Seus dados estão 100% seguros e confidenciais",
+        "tamanho": "14px",
+        "cor": "#595959",
+        "posicao": "abaixo_cta"
+      }
+    }
+  },
+
+  "secao_faq": {
+    "ordem": 6,
+    "tipo": "perguntas_frequentes",
+    "background": "preto_com_pattern_sutil",
+    "padding": "100px vertical",
+    "conteudo": {
+      "titulo": {
+        "principal": "Perguntas Frequentes",
+        "subtitulo": "Tire suas dúvidas sobre a live",
+        "tamanho_principal": "42px",
+        "tamanho_subtitulo": "18px"
+      },
+      "perguntas": [
+        {
+          "id": 1,
+          "importante": true,
+          "icone": "help-circle",
+          "pergunta": "A live realmente será gratuita?",
+          "resposta": "Sim, 100% gratuita. Não há qualquer custo para participar. Nosso objetivo é compartilhar estratégias validadas para que mais clínicas tenham sucesso na Black Friday."
+        },
+        {
+          "id": 2,
+          "importante": true,
+          "icone": "video",
+          "pergunta": "Vou receber a gravação depois?",
+          "resposta": "A gravação ficará disponível por 48 horas após o evento. Porém, recomendamos fortemente participar ao vivo para: fazer perguntas em tempo real, ter acesso prioritário aos bônus, interagir com outros dentistas e receber insights extras que só daremos ao vivo."
+        },
+        {
+          "id": 3,
+          "icone": "graduation-cap",
+          "pergunta": "Preciso ter experiência com marketing digital?",
+          "resposta": "Não! O conteúdo é pensado para diferentes níveis: se você está começando, aprenderá o básico de forma estruturada; se já investe em tráfego, vai descobrir como otimizar e multiplicar resultados; se já teve resultados ruins, entenderá exatamente onde estava errando."
+        },
+        {
+          "id": 4,
+          "icone": "building",
+          "pergunta": "Minha clínica é pequena, funciona para mim?",
+          "resposta": "Com certeza! As estratégias são escaláveis e já foram aplicadas em: consultórios individuais (1 profissional), clínicas médias (2-5 profissionais) e redes grandes (10+ unidades). Você vai aprender a adaptar as táticas ao seu orçamento e estrutura."
+        },
+        {
+          "id": 5,
+          "importante": true,
+          "icone": "gift",
+          "pergunta": "Como recebo os materiais bônus?",
+          "resposta": "O link para download do Mini Treinamento CRC + E-book será disponibilizado durante a transmissão ao vivo para todos os participantes conectados. Por isso é importante estar presente."
+        },
+        {
+          "id": 6,
+          "icone": "credit-card",
+          "pergunta": "Vou ter que comprar algo depois?",
+          "resposta": "Não há obrigação alguma. A live é educacional e você pode aplicar tudo por conta própria. No final, haverá uma apresentação opcional de como a f5 pode ajudar quem quiser implementar com apoio especializado, mas é totalmente opcional."
+        },
+        {
+          "id": 7,
+          "icone": "calendar",
+          "pergunta": "Qual o melhor momento para fazer a Black Friday?",
+          "resposta": "Esta é justamente uma das estratégias que vamos revelar na live! O timing correto pode aumentar seus resultados em até 3x. Antecipar ou atrasar pode fazer toda a diferença."
+        },
+        {
+          "id": 8,
+          "icone": "clock",
+          "pergunta": "E se eu perder o horário?",
+          "resposta": "Você receberá o link da gravação, mas recomendamos MUITO que participe ao vivo porque: daremos insights extras que não estarão na gravação, você poderá tirar dúvidas específicas da sua clínica e o acesso aos bônus é prioritário para quem está ao vivo."
+        },
+        {
+          "id": 9,
+          "icone": "users",
+          "pergunta": "Posso levar minha equipe?",
+          "resposta": "Sim, por favor! Aliás, recomendamos fortemente que sua recepcionista/coordenadora comercial participe. As técnicas de CRC (Como Receber e Converter) são fundamentais para quem está na linha de frente do atendimento."
+        },
+        {
+          "id": 10,
+          "icone": "map-pin",
+          "pergunta": "Vocês atendem minha região?",
+          "resposta": "A f5 atende clínicas em todo o Brasil (e até clientes internacionais). O trabalho é 100% remoto e altamente eficiente. Temos cases de sucesso de Florianópolis a Manaus, de São Paulo a Porto Alegre."
+        },
+        {
+          "id": 11,
+          "icone": "star",
+          "pergunta": "Por que a f5 é especialista em odontologia?",
+          "resposta": "São 8 anos focados especificamente no mercado de saúde, sendo 70% dos clientes clínicas odontológicas. Isso significa: conhecemos as dores reais do setor, sabemos o que funciona (e o que não funciona), temos dados de benchmarking precisos e entendemos a jornada do paciente odontológico."
+        },
+        {
+          "id": 12,
+          "icone": "calendar-days",
+          "pergunta": "Vou aprender sobre outras datas comerciais também?",
+          "resposta": "A live é focada em Black Friday, mas os 4 Pilares e o Checklist que ensinaremos podem ser adaptados para: Dia das Mães, Dia dos Pais, Dia do Cliente, Fim de ano e qualquer outra campanha sazonal."
+        }
+      ],
+      "cta_final": {
+        "texto": "QUERO PARTICIPAR DA LIVE GRATUITA",
+        "style": "mesmo_do_cta_principal"
+      }
+    },
+    "design": {
+      "accordion_style": "cards_empilhados",
+      "spacing_items": "16px",
+      "card_fechado": {
+        "background": "gradiente_sutil_preto_laranja_3%",
+        "border": "1px solid rgba(254, 91, 4, 0.15)",
+        "padding": "24px",
+        "hover": "border_40% + background_intensifica"
+      },
+      "card_aberto": {
+        "background": "gradiente_laranja_sutil_8%",
+        "border": "2px solid rgba(254, 91, 4, 0.4)",
+        "animacao": "smooth_expand_300ms"
+      },
+      "badge_importante": {
+        "texto": "IMPORTANTE",
+        "cor": "#FE5B04",
+        "tamanho": "12px",
+        "style": "pill"
+      }
+    }
+  },
+
+  "rodape": {
+    "ordem": 7,
+    "background": "#0A0A0A",
+    "border_top": "1px solid cinza_escuro",
+    "padding": "40px",
+    "conteudo": {
+      "logo_f5": {
+        "opacity": "60%",
+        "cor": "cinza"
+      },
+      "copyright": "© 2025 f5 Estratégia - Aceleradora de Vendas | Todos os direitos reservados",
+      "cnpj": "CNPJ: XX.XXX.XXX/XXXX-XX",
+      "tagline": "Especialistas em Marketing Digital para Clínicas de Saúde",
+      "localizacao": "Florianópolis - SC | Atendimento em todo Brasil",
+      "font_size": "12px",
+      "cor_texto": "#595959"
+    }
+  },
+
+  "especificacoes_tecnicas": {
+    "responsividade": {
+      "breakpoints": {
+        "desktop": ">1200px",
+        "tablet": "768px - 1199px",
+        "mobile": "<767px"
+      },
+      "ajustes_mobile": {
+        "headlines": "-20px font-size",
+        "grids": "de 2-4 colunas para 1 coluna stack",
+        "padding_sections": "de 120px para 60px vertical",
+        "cta_height": "de 64px para 56px",
+        "font_sizes": "scale down 15-20%"
+      }
+    },
+    "performance": {
+      "imagens": "WebP com fallback JPG",
+      "lazy_loading": "ativo abaixo da fold",
+      "minificacao": "CSS e JS",
+      "critical_css": "inline para above-fold",
+      "font_loading": "font-display: swap"
+    },
+    "acessibilidade": {
+      "contraste_minimo": "4.5:1 texto, 3:1 elementos grandes",
+      "alt_text": "todas imagens",
+      "aria_labels": "elementos interativos",
+      "keyboard_navigation": "tab index lógico",
+      "focus_states": "outline laranja visível"
+    },
+    "seo": {
+      "title": "Black Friday Odonto 2025 - Live Gratuita | f5 Estratégia",
+      "meta_description": "Participe da live gratuita e descubra como faturar 3x mais na Black Friday sem queimar margem. Estratégias validadas em 3.000+ clínicas odontológicas.",
+      "og_tags": true,
+      "schema_markup": "Event schema",
+      "h1_unico": true
+    },
+    "integracao": {
+      "formulario_captura": "obrigatório",
+      "google_analytics": "configurar",
+      "facebook_pixel": "instalar",
+      "crm": "integração com RD Station ou similar"
+    }
+  },
+
+  "elementos_visuais_adicionais": {
+    "micro_animacoes": [
+      "parallax_scroll",
+      "hover_cards_lift_3d",
+      "number_counter_viewport",
+      "gradient_animation_background",
+      "button_ripple_click",
+      "text_reveal_mask",
+      "icon_float_loop"
+    ],
+    "elementos_geometricos": [
+      "circulos_concentricos_outline_laranja",
+      "linhas_diagonais_grid_pattern",
+      "dots_pattern_laranja_espacados",
+      "blobs_abstratos_blur",
+      "formas_hexagonais_tech"
+    ],
+    "glassmorphism_specs": {
+      "background": "rgba(10, 10, 10, 0.7)",
+      "backdrop_filter": "blur(10px)",
+      "border": "1px solid rgba(254, 91, 4, 0.2)",
+      "box_shadow": "0 8px 32px rgba(254, 91, 4, 0.15)"
+    }
+  },
+
+  "notas_implementacao": {
+    "prioridade_alta": [
+      "Formulário de captura funcional com validação",
+      "CTA principal sempre visível e funcional",
+      "Responsividade perfeita em todos dispositivos",
+      "Performance otimizada (PageSpeed >90)",
+      "Integração com CRM para leads"
+    ],
+    "consideracoes": [
+      "f5 sempre com 'f' minúsculo",
+      "Dados dos cases são reais - não alterar números",
+      "Manter hierarquia visual clara",
+      "Focar em conversão, não em volume de conteúdo",
+      "Testar formulário antes do lançamento"
+    ]
+  }
+}
