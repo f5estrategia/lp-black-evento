@@ -39,13 +39,13 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare data for Supabase - incluindo empresa
+      // Prepare data for Supabase - incluindo empresa e source
       const leadData = {
         nome: data.nome,
         email: data.email,
         telefone: data.telefone,
-        empresa: data.empresa,
-        source: 'black_evento',
+        clinica: data.empresa, // Campo 'clinica' armazena nome da empresa
+        source: 'black_evento', // Identificador do evento
       };
 
       console.log('📤 Enviando para Supabase:', leadData);
