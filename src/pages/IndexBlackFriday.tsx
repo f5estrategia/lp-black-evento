@@ -14,9 +14,9 @@ const IndexBlackFriday = () => {
       <Header />
       <HeroBlackFriday />
       <Suspense fallback={<div className="min-h-[200px]" />}>
+        <ContactForm />
         <PainPointsBlackFriday />
         <Solution />
-        <ContactForm />
         <Footer />
       </Suspense>
     </div>

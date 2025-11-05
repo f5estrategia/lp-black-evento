@@ -140,25 +140,6 @@ const HeroBlackFriday = () => {
             </div>
           </div>
 
-          {/* CTA Button - Mobile Optimized */}
-          <div className="text-center px-4">
-            <Button
-              onClick={scrollToForm}
-              size="lg"
-              className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-lg font-bold uppercase tracking-wide md:tracking-wider px-6 md:px-8 py-5 md:py-7 w-full md:w-auto animate-pulse-subtle"
-            >
-              <span className="hidden md:inline">GARANTIR MINHA VAGA GRATUITA</span>
-              <span className="md:hidden">GARANTIR VAGA GRATUITA</span>
-              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 inline-block" />
-            </Button>
-
-            <div className="mt-3 md:mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-white/60">
-              <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-              <span>Seus dados estão 100% seguros</span>
-            </div>
-          </div>
 
 
         </div>
