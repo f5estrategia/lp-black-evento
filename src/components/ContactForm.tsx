@@ -9,6 +9,15 @@ import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 import { Loader2, CheckCircle2, Send } from "lucide-react";
 
+// Import banner and partner logos
+import {
+  googlePartner,
+  metaPartner,
+  rdStationPartner,
+  heroBannerDesktop,
+  heroBannerMobile
+} from "./HeroBlackFriday";
+
 // Validation schema
 const formSchema = z.object({
   nome: z.string().min(2, "Nome deve ter no mínimo 2 caracteres"),
@@ -39,13 +48,33 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare data for Supabase - incluindo empresa e source
+      // Captura parâmetros UTM da URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get('utm_source') || '';
+      const utmMedium = urlParams.get('utm_medium') || '';
+      const utmCampaign = urlParams.get('utm_campaign') || '';
+      const utmTerm = urlParams.get('utm_term') || '';
+      const utmContent = urlParams.get('utm_content') || '';
+
+      // Prepare data for Supabase - estrutura correta da tabela leads_topo
       const leadData = {
         nome: data.nome,
         email: data.email,
         telefone: data.telefone,
-        clinica: data.empresa, // Campo 'clinica' armazena nome da empresa
-        source: 'black_evento', // Identificador do evento
+        campos_personalizado: {
+          empresa: data.empresa,
+          source: 'black_evento',
+          tipo_evento: 'presencial',
+          utm_source: utmSource,
+          utm_medium: utmMedium,
+          utm_campaign: utmCampaign,
+          utm_term: utmTerm,
+          utm_content: utmContent,
+        },
+        nome_formulario: 'Black Friday Evento 2025',
+        id_formulario: 'black_evento',
+        url_conversao: window.location.href,
+        data_conversao: new Date().toISOString(),
       };
 
       console.log('📤 Enviando para Supabase:', leadData);
@@ -95,32 +124,96 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contato" className="relative py-12 md:py-24 overflow-hidden bg-gradient-to-br from-[#0A0A0A] via-[#1a0e0a] to-[#0A0A0A]">
+    <section id="contato" className="relative min-h-screen pt-28 md:pt-[140px] pb-12 md:pb-24 overflow-hidden bg-gradient-to-br from-[#0A0A0A] via-[#1a0e0a] to-[#0A0A0A]">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[20%] left-[10%] w-[200px] md:w-[300px] h-[200px] md:h-[300px] rounded-full bg-[hsl(var(--f5-orange))]/20 blur-[80px] md:blur-[100px] animate-float" />
-        <div className="absolute bottom-[20%] right-[10%] w-[200px] md:w-[300px] h-[200px] md:h-[300px] rounded-full bg-[hsl(var(--f5-orange))]/20 blur-[80px] md:blur-[100px] animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-[10%] left-[10%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] rounded-full bg-[hsl(var(--f5-orange))]/35 blur-[80px] md:blur-[100px] animate-float" />
+        <div className="absolute top-[60%] right-[10%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] rounded-full bg-[hsl(var(--f5-orange))]/35 blur-[80px] md:blur-[100px] animate-float" style={{ animationDelay: "5s" }} />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto">
 
-          {/* Title - Mobile Optimized */}
-          <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 px-2">
-              Garanta Sua Vaga{" "}
-              <span className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[#D4AF37] bg-clip-text text-transparent">
-                Gratuita
-              </span>
-            </h2>
-            <p className="text-base md:text-lg text-[#EFEFEF] px-4">
-              Preencha o formulário abaixo e receba o link exclusivo da transmissão
+          {/* Main Headline */}
+          <div className="text-center animate-fade-in-up mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-6 leading-tight px-2">
+              O Evento Que Vai Mudar Seu{" "}
+              <span className="bg-gradient-to-r from-[hsl(var(--f5-orange))] via-orange-400 to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent">
+                Faturamento
+              </span>{" "}
+              Ainda em 2025
+            </h1>
+
+            <p className="text-base md:text-lg lg:text-xl text-[#EFEFEF] max-w-4xl mx-auto leading-relaxed px-4 mb-6">
+              Estratégias avançadas de crescimento empresarial com Fernando Machado, CEO da F5 Estratégia
             </p>
           </div>
 
-          {/* Form - Mobile Optimized */}
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md border border-white/20 rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          {/* Mobile Banner - shown only on mobile before form */}
+          <div className="md:hidden mb-8 px-2 animate-fade-in-up">
+            <img
+              src={heroBannerDesktop}
+              alt="Black Friday - 13 de Novembro às 19h - Talk com Fernando Machado, CEO F5 Estratégia"
+              className="w-full h-auto rounded-xl shadow-2xl border border-white/10"
+              loading="eager"
+            />
+          </div>
+
+          {/* Banner + Form Layout - Desktop side by side, Mobile stacked */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+
+            {/* Banner Column - Hidden on mobile, visible on desktop */}
+            <div className="hidden md:flex flex-col gap-6 animate-fade-in-up">
+              {/* Banner */}
+              <img
+                src={heroBannerDesktop}
+                alt="Black Friday - 13 de Novembro às 19h - Talk com Fernando Machado, CEO F5 Estratégia"
+                className="w-full h-auto rounded-xl shadow-2xl border border-white/10"
+                loading="eager"
+              />
+
+              {/* Partner Badges - Desktop Only */}
+              <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
+                <p className="text-center text-white/70 text-sm mb-4">
+                  Parceiros Oficiais:
+                </p>
+                <div className="flex items-center justify-center gap-6">
+                  <img
+                    src={googlePartner}
+                    alt="Google Partner"
+                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                  <img
+                    src={metaPartner}
+                    alt="Meta Partner"
+                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                  <img
+                    src={rdStationPartner}
+                    alt="RD Station Partner"
+                    className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Form - Mobile Optimized */}
+            <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md border border-white/20 rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl">
+
+              {/* Form Title - Inside Form Card */}
+              <div className="text-center mb-6 md:mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">
+                  Garanta Sua Vaga{" "}
+                  <span className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[#D4AF37] bg-clip-text text-transparent">
+                    Gratuita
+                  </span>
+                </h2>
+                <p className="text-sm md:text-base text-[#EFEFEF]">
+                  Preencha o formulário. Vagas limitadas!
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 
               {/* Nome */}
               <div>
@@ -224,9 +317,34 @@ const ContactForm = () => {
                 <span>Seus dados estão 100% seguros</span>
               </div>
 
+              {/* Partner Badges - Mobile Only */}
+              <div className="md:hidden pt-4 border-t border-white/10">
+                <p className="text-center text-white/70 text-xs mb-3">
+                  Parceiros Oficiais:
+                </p>
+                <div className="flex items-center justify-center gap-4">
+                  <img
+                    src={googlePartner}
+                    alt="Google Partner"
+                    className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                  <img
+                    src={metaPartner}
+                    alt="Meta Partner"
+                    className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                  <img
+                    src={rdStationPartner}
+                    alt="RD Station Partner"
+                    className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+
             </form>
           </div>
 
+          </div>
 
         </div>
       </div>
