@@ -65,16 +65,17 @@ const ContactForm = () => {
           empresa: data.empresa,
           source: 'black_evento',
           tipo_evento: 'presencial',
-          utm_source: utmSource,
-          utm_medium: utmMedium,
-          utm_campaign: utmCampaign,
-          utm_term: utmTerm,
-          utm_content: utmContent,
         },
         nome_formulario: 'Black Friday Evento 2025',
         id_formulario: 'black_evento',
         url_conversao: window.location.href,
         data_conversao: new Date().toISOString(),
+        // Colunas UTM diretas na tabela
+        utm_source: utmSource,
+        utm_medium: utmMedium,
+        utm_campaign: utmCampaign,
+        utm_term: utmTerm,
+        utm_content: utmContent,
       };
 
       console.log('📤 Enviando para Supabase:', leadData);
